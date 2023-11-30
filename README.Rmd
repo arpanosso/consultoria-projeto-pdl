@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  comment = "#>"
+)
+```
+
+# consultoria-projeto-pdl
+
+## Pacotes
+```{r}
+library(tidyverse)
+```
+
+## Bando de dados
+
+```{r}
+consumo_alimento <- read_rds("data/consumo_alimentar.rds") %>% 
+  rename(
+    qnt_alim_cons=V9005,
+    cod_uni_med_ali_cons=V9007,
+    cod_tipo_ali_cons=V9001,
+    horario_cons_ali=V9015,
+    cod_forma_preparo_ali=V9016,
+    cod_ocasiao_consu=V9017,
+    cod_local_refei=V9018,
+    ad_azeite=V9019,
+    ad_mant_marg=V9020,
+    ad_acucar=V9021,
+    ad_adocante=V9022,
+    ad_mel=V9023,
+    ad_melado=V9024,
+    ad_maionese=V9025,
+    ad_ketchup=V9026,
+    ad_mostard=V9027,
+    ad_shoyo=V9028,
+    ad_queijo_ralado=V9029,
+    ad_creme_leite=V9030
+    )
+skimr::skim(consumo_alimento)
+```
+
